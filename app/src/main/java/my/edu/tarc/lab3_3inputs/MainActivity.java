@@ -118,6 +118,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
 
-        textViewPremium.setText("Premium: " + premium);
+        textViewPremium.setText(getString(R.string.premium) + " RM" + premium);
+    }
+
+    public void resetAll(View view){
+        spinnerAge.setSelection(0);
+        
+        radioGroupGender.clearCheck();
+        if(radioButtonMale.isChecked()){
+            radioButtonMale.setChecked(false);
+        }else{
+            radioButtonFemale.setChecked(false);
+        }
+        textViewPremium.setText(getString(R.string.premium));
     }
 }
